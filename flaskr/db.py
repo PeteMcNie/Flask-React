@@ -19,3 +19,26 @@ def close_db(e=None):
 
     if db is not None:
         db.close()
+
+
+# 4: Py functions that will run the SQL commands in this file
+import click
+
+def init_db():
+    db = get_db()
+
+    with current_app.open_resource('schema.sql') as f:
+        db.executescript(f.read().decode('utf8'))
+
+@click.command('init-db')
+@with_appcontext
+def init_db_command():
+    """Clear the existing data and create new tables."""
+    init_db()
+    click.echo('Pablo: Initialized the database.')
+
+
+# 5: Register close_db() and init_db_command() with the application otherwise they are not used
+def init_app(app):
+    app.teardown_appcontext(close_db)
+    app.cli.add_command(init_db_command)
