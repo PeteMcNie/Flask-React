@@ -1,3 +1,4 @@
+# 1: Step up application factory
 import os
 
 from flask import Flask
