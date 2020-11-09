@@ -1,4 +1,4 @@
-# Need db file to access the database
+# 2: Need db file to access the database
 import sqlite3
 
 from flask import current_app, g
