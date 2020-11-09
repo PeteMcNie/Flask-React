@@ -5,3 +5,6 @@ __pycache__
 *.pyc
 
 instance
+
+bundle*
+node_modules
