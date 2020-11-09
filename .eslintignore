@@ -1,1 +1,10 @@
 server/public/bundle*
+__pycache__
+.vscode
+flaskr
+instance
+node_modules
+venv
+MANIFEST*
+requirements*
+setup.py
