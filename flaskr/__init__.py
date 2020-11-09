@@ -27,8 +27,16 @@ def create_app(test_config=None):
 
 
     def eggs():
-        number = 6
+        number = 12
         boxes = 6
         return number * boxes
 
+# 5.1 Registering db with our app, initilize the db in terminal: new tab, activate environment: . venv/bin/activate, run: export FLASK_APP=flaskr, then: export FLASK_ENV=development, then: flask init-db. Should see our message appear.
+    from . import db
+    db.init_app(app)
+
+
+
+
+# 1: Part of step 1
     return app
