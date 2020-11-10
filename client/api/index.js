@@ -1,6 +1,6 @@
 import request from 'superagent'
 
-const flaskland = 'localhost:5000/hello'
+const flaskland = 'http://localhost:3000/hello'
 
 export function formToApi (data) {
   console.log('API ', data)
