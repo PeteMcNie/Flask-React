@@ -10,6 +10,7 @@
     "format": "npx eslint . --fix --ext .js,.jsx",
     "lint": "npx eslint . --ext .js,.jsx --ignore-path .eslintignore",
     "dev": "run-p dev:client dev:server",
+    "start": "backend/venv/bin/python3 -m flask run --no-debugger",
     "dev:client": "webpack --watch",
     "dev:server": "nodemon server"
   },
@@ -29,7 +30,8 @@
     ]
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "react-hook-form": "^6.11.0"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
@@ -62,5 +64,6 @@
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0"
-  }
+  },
+  "proxy": "http://localhost:5000"
 }
